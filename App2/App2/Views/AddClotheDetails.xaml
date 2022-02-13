@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local ="clr-namespace:SQLitePCL;assembly=SQLitePCLRaw.core"
+             BackgroundColor="Aqua"
+             x:Class="App2.Views.AddClotheDetails">
+    
+        <!--<Grid RowDefinitions="*,Auto,Auto,*" >
+       
+
+        <Label x:Name="labelCount"
+                    Text="{Binding CountDisplay}"
+                    Grid.Row="1"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+       
+        <Button x:Name ="buttonClick"
+                    Grid.Row="2"
+                    Clicked="buttonClick_Clicked"
+                    Text="Add Stockdetails" 
+                    FontSize="Large"/>
+        </Grid>-->
+    <Grid RowDefinitions="30,50,50,50,50,50,50,30,30,*" >
+        <Label x:Name="labelWelcome"
+               Text="Welcome John! This is the page to add clothing stock details." 
+               Grid.ColumnSpan="5"
+               FontAttributes ="Bold"
+               Grid.Row="0"/>
+        
+        <Entry x:Name="txtClothId" Placeholder="Only for stock Update and Delete" Grid.Row="1" Grid.ColumnSpan="5" ></Entry>
+        <Entry x:Name="txtName" Placeholder="Enter Clothing name" Grid.Row="2" Grid.ColumnSpan="5"></Entry>
+        <Entry x:Name="txtgender" Placeholder="Enter Clothing gender " Grid.Row="3" Grid.ColumnSpan="5"></Entry>
+        <Entry x:Name="txtQuantity" Placeholder="Enter Clothing Quantity " Grid.Row="4" Grid.ColumnSpan="5"></Entry>
+
+        <Button x:Name="btnAdd" 
+                 Text="Add" 
+                 Grid.Column="0"
+                 Grid.Row="5"  
+                Grid.ColumnSpan="2"
+                 Clicked="BtnAdd_Clicked" />
+        
+        <Button x:Name="btnDelete" 
+                 Text="Delete" 
+                 Grid.Column="3"
+                 Grid.Row="5"  
+                Grid.ColumnSpan="2"
+                 Clicked="btnDelete_Clicked" />
+        
+        <Button x:Name="btnUpdate" 
+                 Text="Update" 
+                 Grid.Column="0"
+                 Grid.Row="6"  
+                Grid.ColumnSpan="4"
+                 Clicked="btnUpdate_Clicked" />
+
+        <Label Text="Complete Stock details" FontAttributes ="Bold" HorizontalOptions="CenterAndExpand" Grid.Row="7" Grid.ColumnSpan="5"/>
+        <Label Text="ClotheId" FontAttributes="Bold" Grid.Row="8" HorizontalTextAlignment="center" />
+        <Label Text="ClotheName" FontAttributes="Bold" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" HorizontalTextAlignment="Start"/>
+        <Label Text="Gender" FontAttributes="Bold" Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="2" HorizontalTextAlignment="center" />
+        <Label Text="Quantity" FontAttributes="Bold" Grid.Row="8" Grid.Column="4" HorizontalTextAlignment="End" />
+        <ListView x:Name="lstClothDetails" Grid.Row="9" Grid.ColumnSpan="5" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                        <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.2*" />
+                                <ColumnDefinition Width="0.5*" />
+                                <ColumnDefinition Width="0.2*" />
+                                <ColumnDefinition Width="0.3*" />
+                        </Grid.ColumnDefinitions>
+                           
+                            <Label Text="{Binding ClotheId}" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                            <Label Grid.Column="1" Text="{Binding ClotheName}" FontAttributes="Bold" />
+                            <Label Grid.Column="2" Text="{Binding ClotheGender}" />
+                            <Label Grid.Column="3" Text="{Binding Quantity}" HorizontalTextAlignment="Center" />
+                    </Grid>
+                        </ViewCell>
+                            <!--<TextCell Text="{Binding ClotheName}" Detail="{Binding Quantity}" ></TextCell>-->
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="buttonClick_Clicked" />
+    </ContentPage.ToolbarItems>-->
+    
+</ContentPage>
